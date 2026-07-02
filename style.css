@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modeSelector {
+    margin-bottom: 25px;
+}
+
+#openModePopup {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#selectedMode {
+    display: block;
+    margin-top: 8px;
+    color: #94a3b8;
+}
+
+.players {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.player {
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.player1 {
+    background: #2563eb;
+}
+
+.player2 {
+    background: #facc15;
+    color: black;
+}
+
+#statusText {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#board {
+    width: min(95vw, 500px);
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 8px;
+    padding: 10px;
+    background: #1e293b;
+    border-radius: 20px;
+}
+
+.cell {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #334155;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cell:hover {
+    transform: scale(1.08);
+}
+
+.blue {
+    background: #3b82f6;
+}
+
+.yellow {
+    background: #facc15;
+}
+
+#popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.75);
+}
+
+.popupBox {
+    width: 90%;
+    max-width: 320px;
+    padding: 25px;
+    border-radius: 15px;
+    background: #1e293b;
+    color: white;
+}
+
+.modeButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.modeBtn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #334155;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.modeBtn.active {
+    background: #3b82f6;
+}
+
+#startBtn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: 2px solid #22d3ee;
+    border-radius: 10px;
+    background: #111827;
+    color: #22d3ee;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 0 10px #22d3ee;
+}
+
+#startBtn:hover {
+    background: #22d3ee;
+    color: black;
+    transform: translateY(-2px);
+}
+
+#startBtn:active {
+    transform: scale(.96);
+}
+
+@media (max-width:600px) {
+    .players {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .player {
+        width: 100%;
+    }
+
+    .popupBox {
+        width: 95%;
+    }
+}
